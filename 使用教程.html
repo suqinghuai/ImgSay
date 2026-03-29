@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图言 ImgSay 使用教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #4a6b8a;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #f6f8fa;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #e1e4e8;
+            font-size: 14px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #17a2b8;
+        }
+        ul {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .feature-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .feature-card h4 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        .step-box {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        .step-number {
+            background-color: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .hero-section h2 {
+            color: white;
+            border-bottom: none;
+            margin-bottom: 20px;
+        }
+        .model-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .model-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #e1e4e8;
+        }
+        .model-card h4 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>图言 ImgSay 使用教程</h1>
+        
+        <div class="hero-section">
+            <h2>欢迎使用图言 ImgSay</h2>
+            <p>一个强大的 AI 图片文字识别工具，让图片中的文字轻松转化为可编辑文本</p>
+        </div>
+        
+        <div class="section">
+            <h2>项目介绍</h2>
+            <p>图言（ImgSay）是一个基于 AI 模型的图片文字识别工具，能够快速识别图片中的文字内容并将结果保存到文本文件中。</p>
+            <div class="feature-card">
+                <h4>核心功能</h4>
+                <ul>
+                    <li>批量处理图片中的文字，提高工作效率</li>
+                    <li>支持多种图片格式（jpg、jpeg、png、webp、bmp）</li>
+                    <li>自动按顺序处理图片，确保结果的连贯性</li>
+                    <li>结果保存到文本文件，方便后续查看和使用</li>
+                    <li>支持自定义模型选择，适应不同场景需求</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>实现原理</h2>
+            <p>图言使用了以下技术实现图片文字识别：</p>
+            <ul>
+                <li><strong>AI 模型</strong>：采用 ModelScope 平台的 Qwen3-VL-8B-Instruct 模型，该模型能够理解图片内容并提取文字</li>
+                <li><strong>API 调用</strong>：通过调用 ModelScope 的 API 接口，将图片发送到云端进行处理</li>
+                <li><strong>批量处理</strong>：支持一次处理多张图片，提高识别效率</li>
+                <li><strong>Base64 编码</strong>：将图片转换为 Base64 格式，方便通过 API 传输</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>快速开始</h2>
+            <h3>1. 准备工作</h3>
+            <ul>
+                <li>确保您的电脑上已经下载了 <code>ImgSay.exe</code> 程序文件</li>
+                <li>确保程序所在目录中有 <code>config.ini</code> 配置文件</li>
+                <li>确保程序所在目录中有 <code>图片</code> 文件夹，用于存放需要识别的图片</li>
+            </ul>
+            
+            <h3>2. 配置 API Key</h3>
+            <p>使用图言需要一个 ModelScope API Key，获取方法如下：</p>
+            <div class="info">
+                <p><strong>重要提示：</strong>魔塔社区实名认证后，每天可获得 2000 次免费调用次数，足够满足日常使用需求。</p>
+            </div>
+            <ol>
+                <li>访问 <a href="https://www.modelscope.cn/" target="_blank">ModelScope 官网</a></li>
+                <li>注册并登录账号</li>
+                <li>完成实名认证（可选，完成后获得免费调用次数）</li>
+                <li>在个人中心获取 API Key</li>
+                <li>将获取到的 API Key 填写到 <code>config.ini</code> 文件中</li>
+            </ol>
+            
+            <div class="highlight">
+                <p>打开 <code>config.ini</code> 文件，找到以下行：</p>
+                <div class="code">API_KEY = ms-a8cb2a29-cc06-4734-a4a4-3602418dfa40</div>
+                <p>将等号后面的内容替换为您自己的 API Key。</p>
+            </div>
+            
+            <h3>3. 准备图片</h3>
+            <p>将需要识别文字的图片放入 <code>图片</code> 文件夹中。支持的图片格式包括：</p>
+            <ul>
+                <li>jpg</li>
+                <li>jpeg</li>
+                <li>png</li>
+                <li>webp</li>
+                <li>bmp</li>
+            </ul>
+            
+            <h3>4. 运行程序</h3>
+            <ol>
+                <li>双击 <code>main.exe</code> 文件运行程序</li>
+                <li>程序会自动加载配置并开始处理图片</li>
+                <li>处理完成后，结果会保存到 <code>识别结果.txt</code> 文件中</li>
+                <li>按任意键退出程序</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>配置说明</h2>
+            <p><code>config.ini</code> 文件包含以下配置选项：</p>
+            
+            <div class="code">
+[ModelScope]<br>
+# 魔塔社区获取的API Key<br>
+API_KEY = ms-a8cb2a29-cc06-4734-a4a4-3602418dfa40  <br>
+# 接口地址<br>
+API_URL = https://api-inference.modelscope.cn/v1/chat/completions<br>
+# 模型名称<br>
+MODEL_ID = Qwen/Qwen3-VL-8B-Instruct<br>
+# 图片文件夹路径<br>
+IMG_FOLDER = 图片/<br>
+# 识别结果保存文件<br>
+RESULT_FILE = 识别结果.txt<br>
+# 每次调用的图片数量<br>
+BATCH_SIZE = 4
+            </div>
+            
+            <ul>
+                <li><strong>API_KEY</strong>：ModelScope API 密钥，必须填写</li>
+                <li><strong>API_URL</strong>：API 接口地址，默认值即可</li>
+                <li><strong>MODEL_ID</strong>：使用的模型名称，默认值为 Qwen/Qwen3-VL-8B-Instruct，可根据需要更换为其他支持多模态的模型</li>
+                <li><strong>IMG_FOLDER</strong>：图片文件夹路径，可以根据需要修改</li>
+                <li><strong>RESULT_FILE</strong>：识别结果保存文件，可以根据需要修改</li>
+                <li><strong>BATCH_SIZE</strong>：每次处理的图片数量，默认值为 4</li>
+            </ul>
+            
+            <div class="info">
+                <p><strong>模型选择说明：</strong>您可以根据需要更换不同的多模态模型，只要该模型支持图片理解和文字识别功能即可。不同模型在识别准确率、速度和支持的语言范围上可能会有所差异。</p>
+            </div>
+            
+            <h3>推荐模型</h3>
+            <div class="model-list">
+                <div class="model-card">
+                    <h4>Qwen/Qwen3-VL-8B-Instruct</h4>
+                    <p>默认模型，支持多语言识别，准确率高</p>
+                </div>
+                <div class="model-card">
+                    <h4>Doubao/Doubao-VL-7B-Instruct</h4>
+                    <p>字节跳动开发的多模态模型，性能优秀</p>
+                </div>
+                <div class="model-card">
+                    <h4>GPT-4V</h4>
+                    <p>OpenAI 开发的先进多模态模型，识别能力强</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>项目开发文档</h2>
+            <h3>项目结构</h3>
+            <ul>
+                <li><code>main.py</code>：主程序文件，包含核心功能实现</li>
+                <li><code>config.ini</code>：配置文件，存储 API 密钥和其他设置</li>
+                <li><code>图片/</code>：存放待识别图片的文件夹</li>
+                <li><code>识别结果.txt</code>：保存识别结果的文件</li>
+                <li><code>main.exe</code>：打包后的可执行文件</li>
+            </ul>
+            
+            <h3>核心功能模块</h3>
+            <ol>
+                <li><strong>配置加载</strong>：<code>load_config()</code> 函数，负责加载和验证配置文件</li>
+                <li><strong>图片处理</strong>：<code>get_image_base64()</code> 函数，将图片转换为 Base64 格式</li>
+                <li><strong>批量处理</strong>：<code>process_batch()</code> 函数，处理图片识别并保存结果</li>
+            </ol>
+            
+            <h3>依赖包</h3>
+            <div class="code">
+[project]<br>
+name = "llm-ocr-project"<br>
+version = "0.1.0"<br>
+description = "Add your description here"<br>
+readme = "README.md"<br>
+requires-python = ">=3.12"<br>
+dependencies = [<br>
+    "colorama>=0.4.6",<br>
+    "dashscope>=1.25.12",<br>
+    "natsort>=8.4.0",<br>
+    "pyinstaller>=6.19.0",<br>
+]<br>
+            </div>
+            
+            <h3>打包方法</h3>
+            <p>使用 PyInstaller 将项目打包为可执行文件：</p>
+            <div class="code">pyinstaller --onefile --windowed --icon=main.ico main.py</div>
+            
+            <h3>扩展开发</h3>
+            <p>如果您想扩展项目功能，可以考虑以下方向：</p>
+            <div class="feature-card">
+                <h4>功能扩展建议</h4>
+                <ul>
+                    <li>添加图形界面，提高用户体验</li>
+                    <li>支持更多图片格式和批量导入</li>
+                    <li>增加识别结果的格式化选项（如导出为 Word、Excel 等）</li>
+                    <li>添加多语言支持，适应不同语言的图片识别</li>
+                    <li>集成多个 AI 模型，根据不同场景自动选择最优模型</li>
+                    <li>添加 OCR 后处理功能，如文本校正、格式优化等</li>
+                </ul>
+            </div>
+            
+            <h3>模型切换指南</h3>
+            <div class="highlight">
+                <p>如果您想切换到其他支持多模态的模型，只需修改 <code>config.ini</code> 文件中的 <code>MODEL_ID</code> 配置项即可。例如：</p>
+                <div class="code">MODEL_ID = Doubao/Doubao-VL-7B-Instruct</div>
+                <p>请注意，不同模型的 API 调用方式可能略有不同，某些模型可能需要调整请求参数。</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>常见问题</h2>
+            <h3>1. 程序运行时提示 "配置文件不存在"</h3>
+            <p>请确保 <code>config.ini</code> 文件与 <code>main.exe</code> 在同一目录下。</p>
+            
+            <h3>2. 程序运行时提示 "图片文件夹不存在"</h3>
+            <p>请确保 <code>图片</code> 文件夹与 <code>main.exe</code> 在同一目录下，或者修改 <code>config.ini</code> 中的 <code>IMG_FOLDER</code> 配置。</p>
+            
+            <h3>3. 识别结果为空或不准确</h3>
+            <p>可能的原因：</p>
+            <ul>
+                <li>API Key 无效或已过期</li>
+                <li>图片质量太差，文字不清晰</li>
+                <li>图片中的文字太小或太密集</li>
+            </ul>
+            
+            <h3>4. 程序运行缓慢</h3>
+            <p>处理速度取决于以下因素：</p>
+            <ul>
+                <li>图片数量和大小</li>
+                <li>网络速度</li>
+                <li>ModelScope API 的响应速度</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>联系与支持</h2>
+            <p>如果您在使用过程中遇到问题，可以：</p>
+            <ul>
+                <li>检查配置文件是否正确</li>
+                <li>确保网络连接正常</li>
+                <li>查看 <code>识别结果.txt</code> 文件中的错误信息</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

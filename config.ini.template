@@ -1,0 +1,13 @@
+[ModelScope]
+# 魔塔社区获取的API Key
+API_KEY = Your API Key 
+# 接口地址
+API_URL = https://api-inference.modelscope.cn/v1/chat/completions
+# 模型名称
+MODEL_ID = Qwen/Qwen3-VL-8B-Instruct
+# 图片文件夹路径
+IMG_FOLDER = 图片/
+# 识别结果保存文件
+RESULT_FILE = 识别结果.txt
+# 每次调用的图片数量
+BATCH_SIZE = 4
