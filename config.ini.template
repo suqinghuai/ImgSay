@@ -11,3 +11,5 @@ IMG_FOLDER = 图片/
 RESULT_FILE = 识别结果.txt
 # 每次调用的图片数量
 BATCH_SIZE = 4
+# 识别失败处理策略：skip/retry/stop
+ERROR_HANDLING = skip
